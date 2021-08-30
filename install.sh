@@ -38,6 +38,7 @@ systemctl disable firewalld
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" "/etc/selinux/config"
 
 #安装完成
+service ss5 stop && service ss5 restart
 echo "Socks5安装完成" && service ss5 status
 echo "默认用户名: "${Username}
 echo "默认密码  : "${UserPasswd}

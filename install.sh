@@ -3,7 +3,7 @@
 rpm -q wget || yum install -y wget
 yum install gcc automake autoconf libtool make
 yum install -y gcc openldap-devel pam-devel openssl-devel
-wget https://sourceforge.net/projects/ss5/files/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz
+https://github.com/siemenstutorials/Socks5Go/releases/download/v1/ss5-3.8.9-8.tar.gz
 tar -vzx -f ss5-3.8.9-8.tar.gz
 cd ss5-3.8.9/
 ./configure

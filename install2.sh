@@ -33,7 +33,7 @@ echo "set_port = ${set_port}"
 pf=/etc/init.d/ss5
 sed -i '6c export SS5_SOCKS_PORT=1080' $pf
 sed -i '7c export SS5_SOCKS_USER=root' $pf
-sed -i "s|1080|${set_port}|" $file
+sed -i "s|1080|${set_port}|" $pf
 #用户登陆权限设置
 confFile=/etc/opt/ss5/ss5.conf
 echo -e $Username $UserPasswd >> /etc/opt/ss5/ss5.passwd

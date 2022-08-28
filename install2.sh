@@ -31,13 +31,9 @@ echo "set_port = ${set_port}"
 
 #指定端口连接设置
 pf=/etc/init.d/ss5
-
-s1="export SS5_SOCKS_PORT=${set_port}"
-s2="export SS5_SOCKS_USER=root"
-
-sed -i '6c ${s1}' $pf
-sed -i '7c ${s1}' $pf
-
+sed -i '6c export SS5_SOCKS_PORT=1080' $pf
+sed -i '7c export SS5_SOCKS_USER=root' $pf
+sed -i "s|1080|${set_port}|" $file
 #用户登陆权限设置
 confFile=/etc/opt/ss5/ss5.conf
 echo -e $Username $UserPasswd >> /etc/opt/ss5/ss5.passwd
@@ -65,7 +61,7 @@ echo "Socks5安装完成" && service ss5 status
 echo -e "安装完成SOCKS5连接信息如下:"
 echo "————————————————————————————————"
 echo "服务器IP: " ${public_ip}
-echo "用户名: " ${username}
+echo "用户名: " ${Username}
 echo "密 码: " ${UserPasswd}
-echo "端 口: " ${port}
+echo "端 口: " ${set_port}
 echo "————————————————————————————————"
